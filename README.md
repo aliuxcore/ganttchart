@@ -6,11 +6,11 @@ and plan the schedule. so enjoy , any question, please email me
 
 
 
-These are the three features that make Ember.js a joy to use:
+These are the their features  a joy to use:
 
 1. project canlendar, choose the rang of the time
 2. gantt chart ,show the project-mate the task scope and status
-
+3. in the gantt chart, select an rang time, we could create the task for that time aera, in the code, we just console the related data, so user could write their own logic, or publish the message etc
 
 See the screenshot:
 
