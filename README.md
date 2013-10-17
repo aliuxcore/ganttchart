@@ -1,8 +1,8 @@
 # GanttChart
 
-GanttChart is the composite widget, combine by project canlendar and gantt chart, every easy for
-using and see every person's task scale, give the leader and engineer easy way to control own time
-and plan the schedule
+GanttChart is the composite widget, combined by  the project canlendar and gantt chart, every easy for
+using and see every person's task scale, give the leader and engineer easy way to control their time
+and plan the schedule. so enjoy , any question, please email me
 
 
 
