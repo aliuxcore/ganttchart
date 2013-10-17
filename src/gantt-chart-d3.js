@@ -2,13 +2,12 @@
  * @author Dimitry Kudrayvtsev
  * @version 2.1
  *
- * Add user and task for small project management
- * @author zhouquan.yezq
+ * gantt chart for project management
+ * @author zhouquan.yezq@alibaba-inc.com
  * @version 2.2
  */
 
 d3.gantt = function() {
-
 
     var FIT_TIME_DOMAIN_MODE = "fit";
     var FIXED_TIME_DOMAIN_MODE = "fixed";
@@ -85,9 +84,9 @@ d3.gantt = function() {
 
 		initTimeDomain(__tasks);
 		initAxis();
-		var svg = d3.select("body")
+		var svg = d3.select("#ganttChartContainer")
 		.append("svg")
-		.attr("class", "chart")
+		.attr("class", "chart spark")
 		.attr("width", width + margin.left + margin.right)
 		.attr("height", height + margin.top + margin.bottom)
 		.append("g")
@@ -118,6 +117,7 @@ d3.gantt = function() {
 		 .attr("class", "x axis")
 		 .attr("transform", "translate(0,20)")//0, " + (height - margin.top - margin.bottom) + "
 		 .transition()
+		  .style("stroke", "#444")
 		 .call(xAxis);
 
          //draw the y axis, no scale
@@ -332,7 +332,7 @@ d3.gantt = function() {
     /**
 	* parse the data for gantt chart
     */
-    gantt.procssData=function(data) {
+    gantt.processData=function(data) {
     	var _data=data.items;
     	__tasks=[];
 		_data.forEach(function(v, index) {
@@ -366,12 +366,8 @@ d3.gantt = function() {
 
     	console.log(" total person number:",_data.length);
     		//every person, use use new y scale
-
     	return gantt;
 
     };
-
-
-
     return gantt;
 };

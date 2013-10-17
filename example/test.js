@@ -73,6 +73,71 @@ var data1={
         };
 
 
+var data={
+    "items":[
+        {
+            "number":2,
+            "time":1381334400000
+        },
+        {
+            "number":7,
+            "time":1381420800000
+        },
+        {
+            "number":10,
+            "time":1381507200000
+        },
+        {
+            "number":20,
+            "time":1381593600000
+        },
+        {
+            "number":30,
+            "time":1381680000000
+        },
+        {
+            "number":40,
+            "time":1381766400000
+        },
+        {
+            "number":100,
+            "time":1381852800000
+        },
+        {
+            "number":70,
+            "time":1381939200000
+        },
+        {
+            "number":80,
+            "time":1382025600000
+        },
+        {
+            "number":200,
+            "time":1382112000000
+        },
+        {
+            "number":10,
+            "time":1382198400000
+        },
+        {
+            "number":10,
+            "time":1382284800000
+        },
+        {
+            "number":30,
+            "time":1382371200000
+        },
+        {
+            "number":10,
+            "time":1382457600000
+        },
+        {
+            "number":1,
+            "time":1382544000000
+        }
+    ]
+};
+
 var taskStatus = {
     "SUCCEEDED" : "bar",
     "FAILED" : "bar-failed",
@@ -93,7 +158,10 @@ var minDate = tasks[0].startDate;
 
 var timeDomainString = "1day";*/
 
-var gantt = d3.gantt().taskStatus(taskStatus).procssData(data1);
+var proCalendar=d3.proCalendar().processData(data);
+proCalendar();
+
+var gantt = d3.gantt().taskStatus(taskStatus).processData(data1);
 
 //gantt.setContainer(d3.select(".ganttchartContainer"));
 gantt.timeDomainMode("fit");
@@ -105,30 +173,30 @@ function changeTimeDomain(timeDomainString) {
     this.timeDomainString = timeDomainString;
     switch (timeDomainString) {
     case "1hr":
-	format = "%H:%M:%S";
-	gantt.timeDomain([ d3.time.hour.offset(getEndDate(), -1), getEndDate() ]);
-	break;
+    format = "%H:%M:%S";
+    gantt.timeDomain([ d3.time.hour.offset(getEndDate(), -1), getEndDate() ]);
+    break;
     case "3hr":
-	format = "%H:%M";
-	gantt.timeDomain([ d3.time.hour.offset(getEndDate(), -3), getEndDate() ]);
-	break;
+    format = "%H:%M";
+    gantt.timeDomain([ d3.time.hour.offset(getEndDate(), -3), getEndDate() ]);
+    break;
 
     case "6hr":
-	format = "%H:%M";
-	gantt.timeDomain([ d3.time.hour.offset(getEndDate(), -6), getEndDate() ]);
-	break;
+    format = "%H:%M";
+    gantt.timeDomain([ d3.time.hour.offset(getEndDate(), -6), getEndDate() ]);
+    break;
 
     case "1day":
-	format = "%H:%M";
-	gantt.timeDomain([ d3.time.day.offset(getEndDate(), -1), getEndDate() ]);
-	break;
+    format = "%H:%M";
+    gantt.timeDomain([ d3.time.day.offset(getEndDate(), -1), getEndDate() ]);
+    break;
 
     case "1week":
-	format = "%a %H:%M";
-	gantt.timeDomain([ d3.time.day.offset(getEndDate(), -7), getEndDate() ]);
-	break;
+    format = "%a %H:%M";
+    gantt.timeDomain([ d3.time.day.offset(getEndDate(), -7), getEndDate() ]);
+    break;
     default:
-	format = "%H:%M"
+    format = "%H:%M"
 
     }
     gantt.tickFormat(format);
@@ -138,7 +206,7 @@ function changeTimeDomain(timeDomainString) {
 function getEndDate() {
     var lastEndDate = Date.now();
     if (tasks.length > 0) {
-	lastEndDate = tasks[tasks.length - 1].endDate;
+    lastEndDate = tasks[tasks.length - 1].endDate;
     }
     return lastEndDate;
 }
@@ -151,10 +219,10 @@ function addTask() {
     var taskName = taskNames[Math.floor(Math.random() * taskNames.length)];
 
     tasks.push({
-	"startDate" : d3.time.hour.offset(lastEndDate, Math.ceil(1 * Math.random())),
-	"endDate" : d3.time.hour.offset(lastEndDate, (Math.ceil(Math.random() * 3)) + 1),
-	"taskName" : taskName,
-	"status" : taskStatusName
+    "startDate" : d3.time.hour.offset(lastEndDate, Math.ceil(1 * Math.random())),
+    "endDate" : d3.time.hour.offset(lastEndDate, (Math.ceil(Math.random() * 3)) + 1),
+    "taskName" : taskName,
+    "status" : taskStatusName
     });
 
     changeTimeDomain(timeDomainString);
