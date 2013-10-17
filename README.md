@@ -12,6 +12,7 @@ These are the three features that make Ember.js a joy to use:
 2. gantt chart ,show the project-mate the task scope and status
 
 
-[![Build Status](http:img3.tbcdn.cn/tfscom/T1pCvEFi0eXXccoVrX_620x10000.jpg)](http://taobao.com)
+See the screenshot:
+[![Build Status](http://img3.tbcdn.cn/tfscom/T1pCvEFi0eXXccoVrX_620x10000.jpg)](http://taobao.com)
 
 
