@@ -6,7 +6,7 @@ and plan the schedule. so enjoy , any question, please email me
 
 
 
-These are the their features  a joy to use:
+These are the three features  a joy to use:
 
 1. project canlendar, choose the rang of the time
 2. gantt chart ,show the project-mate the task scope and status
