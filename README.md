@@ -13,6 +13,7 @@ These are the three features that make Ember.js a joy to use:
 
 
 See the screenshot:
+
 [![Build Status](http://img3.tbcdn.cn/tfscom/T1pCvEFi0eXXccoVrX_620x10000.jpg)](http://taobao.com)
 
 
